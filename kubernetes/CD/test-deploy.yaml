@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: production-test
-  namespace: deploy-test
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -22,6 +22,6 @@ spec:
         - envFrom:
             - secretRef:
                 name: production-env
-          image: 'yagnesh.com:30002/inventyv/production:v0.0.12'
+          image: 'nginx'
           imagePullPolicy: Always
           name: poding
